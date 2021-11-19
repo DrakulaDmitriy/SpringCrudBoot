@@ -6,7 +6,6 @@
 </head>
 <body>
 <h2>New user</h2>
-
 <br>
 <form th:method="POST" th:action="@{/add}" th:object="${user}">
     <label for="name">Name: </label>
@@ -31,6 +30,14 @@
 
     <label for="password">Password: </label>
     <input type="password" th:field="*{password}" id="password"/>
+    <br><br>
+
+    <label>Roles</label>
+    <label th:each="role : ${roles}">
+        <input type="checkbox" name="roles" th:value="${role.userRole}"
+               th:checked="${user.roles.contains(role)}"/>
+        <label th:text="${role.userRole}"></label>
+    </label>
     <br><br>
 
     <input type="submit" value="Add"/>

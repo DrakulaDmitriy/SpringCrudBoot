@@ -5,8 +5,28 @@
     <title>Admin page</title>
 </head>
 <body>
-<h1>Users</h1>
+<h2>User info</h2>
+<br>
+<table style="border: solid black">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Login</th>
+    </tr>
+    <tr>
+        <td th:text="${user.name}">name</td>
+        <td th:text="${user.surname}">surname</td>
+        <td th:text="${user.age}">age</td>
+        <td th:text="${user.email}">email</td>
+        <td th:text="${user.login}">login</td>
+    </tr>
 
+</table>
+<br><br>
+
+<h1>Users</h1>
 <br>
 <table style="border: solid black">
     <tr>
@@ -27,13 +47,13 @@
         <td th:text="${user.roles}" style="text-align: center">roles</td>
 
         <td>
-            <form th:method="GET" th:action="@{/{id}/update(id=${user.id})}">
+            <form th:method="GET" th:action="@{/admin/{id}/update(id=${user.id})}">
                 <input type="submit" value="Update"/>
             </form>
         </td>
 
         <td>
-            <form th:method="POST" th:action="@{/{id}/delete(id=${user.id})}">
+            <form th:method="POST" th:action="@{/admin/{id}/delete(id=${user.id})}">
                 <input type="submit" value="Delete"/>
             </form>
         </td>
