@@ -37,7 +37,7 @@ public class CreateNewUsers {
 
         userService.saveUser(new User("UserName", "UserSurname", 13, "user1@gmail.com", "User",
                 "user", userSet));
-        userService.saveUser(new User("AdminName1", "AdminSurname", 24, "admin@gmail.com", "Admin",
+        userService.saveUser(new User("AdminName", "AdminSurname", 24, "admin@gmail.com", "Admin",
                 "admin", adminSet));
     }
 }
